@@ -33,3 +33,34 @@ else if (pilih == 8 && angka[8] == '8')
 angka[8] = simbol;
 else if (pilih == 9 && angka[9] == '9')
 angka[9] = simbol;
+else
+{
+cout << "Jawaban tidak valid ";
+pemain--;
+cin.ignore();
+cin.get();
+}
+i=cetak_hasil();
+pemain++;
+}while(i==-1);
+papan_permainan();
+if(i==1)
+cout << " ==>\aPemain " <<--pemain<<" win ";
+else
+cout <<" ==>\aGame draw";
+cin.ignore();
+cin.get();
+return 0;
+}
+
+int cetak_hasil(){
+if(angka[1]==angka[2] && angka[2]==anga[3])
+return 1;
+else if (angka[4] == angka[5] && angka[5]==angka[6])
+return 1;
+else if (angka[7] == angka[8] && angka[8]==angka[9])
+return 1;
+else if (angka[1] == angka[4] && angka[4]==angka[7])
+return 1;
+else if (angka[2] == angka[5] && angka[5]==angka[8])
+return 1;
